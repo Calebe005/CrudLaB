@@ -1,7 +1,8 @@
+import ValidationErrors from "../Errors/errors.validadition";
 import FilterData from "./controller.filter.dados";
 
 // Função para organizar os dados recebidos;
-export default function DUser(req:any, typeReq:string){
+export default async function DUser(req:any){
 
     // Classe de objetos de usuarios:
     class Usuario {
@@ -17,15 +18,14 @@ export default function DUser(req:any, typeReq:string){
         }
     }
 
-    let dataUser // Dados que serão filtrados
-    const Validrequisitions = ["Cadastro", "Login", "Pesquisa", "Update", "Delete"]
-    // Verificação do tipo de requisição:
-    if(Validrequisitions.includes(typeReq)){
-        // Atribuindo dados do usuario para cadastro;
-        dataUser = new Usuario(req);
-    } else {
-        throw new Error(`Tipo de requisição desconhecido: ${typeReq}`);
-    }
+    // Atribuindo dados do usuario para cadastro;
+    let dataUser = new Usuario(req);
+    // Tornando dados string UpperCase exceto a senha:
+    dataUser = Object.fromEntries(
+        Object.entries(dataUser).map(([chave, valor]) =>[
+            chave,
+            typeof valor === "string" && chave != "senha_usuario"? valor.toUpperCase() : valor
+            ]));
 
-    FilterData(dataUser); // Controller para Filtragem dos dados;
+    return await FilterData(dataUser);// Controller para Filtragem dos dados;
 }

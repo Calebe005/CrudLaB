@@ -12,6 +12,7 @@ const rt_delete_1 = __importDefault(require("./routes/rt_delete"));
 const rt_cadastro_1 = __importDefault(require("./routes/rt.cadastro"));
 const rt_update_1 = __importDefault(require("./routes/rt_update"));
 const rt_cadastro_2 = __importDefault(require("./routes/rt.cadastro"));
+const midle_errors_1 = require("./Errors/midle.errors");
 // Server
 const app = (0, express_1.default)();
 const port = 8080; // Porta local
@@ -22,6 +23,7 @@ app.use("/cadastro", rt_cadastro_2.default); // Cadastrar usuário
 app.use("/login", rt_cadastro_1.default); // Fazer Login
 app.use("/delete", rt_delete_1.default); // Deletar usuário
 app.use("/update", rt_update_1.default); // Atualizar cadastro
+app.use(midle_errors_1.errorHandler); //! Midleware de errors.
 // Inicializando server:
 app.listen(port, (err) => {
     if (err) {
