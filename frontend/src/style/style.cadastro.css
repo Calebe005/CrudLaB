@@ -1,0 +1,54 @@
+#formCadastro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 60vh;
+  width: 50vw;
+  padding: 2% 2% 0px 2%;
+
+  top: 10%;
+  left: 5%;
+  position: relative;
+  z-index: 2;
+
+  border-radius: 20px;
+  border: 1px solid #063556d7;
+
+  background-color: rgb(255, 255, 255);
+
+  display: none;
+}
+
+.campoCampoCad {
+  padding: 4%;
+  width: 100%;
+
+  border-radius: 10px;
+  border: 2px solid #c7e5fb;
+}
+
+.campoCampoCad:hover {
+  border-color: #1c3241;
+}
+
+.secCad {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+#btnCad {
+  padding: 2%;
+  width: 100%;
+
+  border: none;
+  border-radius: 10px;
+
+  background-color: #c7e5fb;
+}
+
+#btnCad:hover {
+  background-color: #57a9ed;
+}
