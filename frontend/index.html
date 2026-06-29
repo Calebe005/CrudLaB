@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style/style.index.css" />
     <link rel="stylesheet" href="src/style/style.cadastro.css" />
+    <link rel="stylesheet" href="src/style/style.loading.css">
+    <link rel="stylesheet" href="src/style/style.error.css">
     <link
       rel="shortcut icon"
       href="assets/img/logoSuperior.png"
@@ -24,9 +26,9 @@
       <nav id="areaMenuSup">
         <ul id="listaMenuSup">
           <div id="areaLogin">
-            <li class="itemMenuSup"><a href="">Login</a></li>
+            <li class="itemMenuSup" id="btnLogin"><p>Login</p></li>
             <li class="itemMenuSup" id="cadastre">
-              <a href="">Cadastre-se</a>
+              <p>Cadastre-se</p>
             </li>
           </div>
         </ul>
@@ -36,7 +38,7 @@
     <!-- Conteudo principal-->
     <main id="conteudoPrincipal">
       <!--Formulário Login-->
-      <form action="#" method="get" id="formLogin" class="popUp">
+      <form action="#" method="get" id="formLogin">
         <label for="email" class="labelLogin">E-mail</label>
         <input type="email" id="emailInput" class="campoLogin" name="email" />
         <label for="senha" class="labelLogin">Senha</label>
@@ -47,11 +49,11 @@
           name="senha"
         />
         <p id="lCadastra">Não possui Login? Cadastre-se!</p>
-        <input type="button" value="Login" id="btnInput" />
+        <input type="submit" value="Login" id="btnInput" />
       </form>
 
       <!--Formulário de cadastro-->
-      <form action="#" method="get" id="formCadastro">
+      <form action="#" method="post" id="formCadastro">
         <div class="secCad">
           <label for="nome">Nome</label>
           <input type="text" id="nomeCad" class="campoCampoCad" name="nome" />
@@ -101,7 +103,7 @@
             name="cfsenha"
           />
         </div>
-        <input type="button" value="Cadastrar" id="btnCad" />
+        <input type="submit" value="Cadastrar" id="btnCad" />
       </form>
 
       <img
@@ -111,6 +113,6 @@
       />
     </main>
 
-    <script src="src/script/animations/script.popUp.js"></script>
+    <script type="module" src="src/script/script.js"></script>
   </body>
 </html>

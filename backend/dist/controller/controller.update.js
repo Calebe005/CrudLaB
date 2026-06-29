@@ -16,7 +16,9 @@ async function upDate(data) {
     // Tornando as modificações maiúsculas;
     data.update = Object.fromEntries(Object.entries(data.update).map(([chave, valor]) => [
         chave,
-        typeof valor === "string" && chave != "senha_usuario" ? valor.toUpperCase() : valor
+        typeof valor === "string" && chave != "senha_usuario"
+            ? valor.toUpperCase()
+            : valor,
     ]));
     // Fazer filtragem de dados se houver:
     const status = await (0, controller_filter_dados_1.default)(data.update, "Update");

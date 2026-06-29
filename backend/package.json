@@ -16,7 +16,9 @@
   },
   "dependencies": {
     "@types/bcrypt": "^6.0.0",
+    "@types/cors": "^2.8.19",
     "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "env": "^0.0.2",
     "mysql2": "^3.22.5"

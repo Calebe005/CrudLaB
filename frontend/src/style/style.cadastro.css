@@ -18,7 +18,8 @@
 
   background-color: rgb(255, 255, 255);
 
-  display: none;
+  display: flex;
+  transform: translateX(-150%);
 }
 
 .campoCampoCad {
@@ -52,3 +53,5 @@
 #btnCad:hover {
   background-color: #57a9ed;
 }
+
+

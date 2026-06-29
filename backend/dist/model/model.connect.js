@@ -9,7 +9,7 @@ const poll = promise_1.default.createPool({
     password: `${process.env.BD_PASS}`,
     database: "login2",
     user: "root",
-    connectionLimit: 10
+    connectionLimit: 10,
 });
 exports.default = poll;
 //# sourceMappingURL=model.connect.js.map

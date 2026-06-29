@@ -9,12 +9,11 @@ const errors_validadition_1 = __importDefault(require("./errors.validadition"));
 function errorHandler(err, req, res, next) {
     if (err instanceof errors_validadition_1.default) {
         return res.status(401).json({
-            "message": err.message,
-            "error": err.errors
+            message: err.message,
+            error: err.errors,
         });
     }
     console.error(err.message);
-    return res.status(500).send("Erro interno no servidor!");
+    return res.status(500).json("Erro interno no servidor!");
 }
-;
 //# sourceMappingURL=midle.errors.js.map

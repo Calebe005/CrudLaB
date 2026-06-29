@@ -18,7 +18,9 @@ async function DUser(req) {
     // Tornando dados string UpperCase exceto a senha:
     dataUser = Object.fromEntries(Object.entries(dataUser).map(([chave, valor]) => [
         chave,
-        typeof valor === "string" && chave != "senha_usuario" ? valor.toUpperCase() : valor
+        typeof valor === "string" && chave != "senha_usuario"
+            ? valor.toUpperCase()
+            : valor,
     ]));
     return await (0, controller_filter_dados_1.default)(dataUser, "Cadastro"); // Controller para Filtragem dos dados;
 }

@@ -21,15 +21,18 @@ async function FilterData(user, reqType) {
             erros.push("Nome e sobrenome não podem conter números");
         }
     }
-    else if (!user.nome_usuario && !user.sobrenome_usuario && reqType == "Cadastro") {
+    else if (!user.nome_usuario &&
+        !user.sobrenome_usuario &&
+        reqType == "Cadastro") {
         erros.push("Nome e sobrenome são campos obrigatórios!");
     }
-    //! Verificação de email:  
+    //! Verificação de email:
     if (user.email_usuario) {
         // Emails validos:
         let ValidEmail = ["@GMAIL", "@HOTMAIL", "@YAHOO"];
         // Verifica se o e-mail possui um e somente um dos emails validos.
-        if (!ValidEmail.some(c => user.email_usuario.includes(c)) || user.email_usuario.split("@").length != 2) {
+        if (!ValidEmail.some((c) => user.email_usuario.includes(c)) ||
+            user.email_usuario.split("@").length != 2) {
             erros.push("Email Inválido!");
         }
         if (user.email_usuario.length > 30) {
@@ -54,7 +57,7 @@ async function FilterData(user, reqType) {
     //! Verificação de data de nascimento:
     if (user.data_nascimento) {
         let dados_nascimento = user.data_nascimento.split("-");
-        let dt_nascimento = dados_nascimento.map(e => Number(e)); // Data em número;
+        let dt_nascimento = dados_nascimento.map((e) => Number(e)); // Data em número;
         if (dt_nascimento[0] > 2026) {
             erros.push("O ano de nascimento é maior que o ano atual!");
         }

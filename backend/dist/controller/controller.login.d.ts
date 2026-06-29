@@ -2,6 +2,6 @@ interface requisition {
     email_usuario: string;
     senha_usuario: string;
 }
-export default function loginUser(data: requisition): Promise<"Senha incorreta!" | "login efetuado!">;
+export default function loginUser(data: requisition): Promise<"Login efetuado!" | "Senha incorreta!">;
 export {};
 //# sourceMappingURL=controller.login.d.ts.map

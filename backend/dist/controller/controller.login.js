@@ -8,18 +8,20 @@ const controller_busca_1 = __importDefault(require("./controller.busca"));
 const service_bcrypt_1 = require("../services/service.bcrypt");
 async function loginUser(data) {
     // Extraindo objeto de dados:
-    let dataReq = await (0, controller_busca_1.default)({ reqType: "Email", search: data.email_usuario });
+    let dataReq = await (0, controller_busca_1.default)({
+        reqType: "Email",
+        search: data.email_usuario,
+    });
     dataReq = dataReq;
     let dataBD = JSON.parse(JSON.stringify(dataReq, null, 2));
     // Dados encontrados no banco:
-    let emailBD = dataBD[0].email_usuario; // Email
     let senhaBD = dataBD[0].senha_usuario; // Senha
     // Verificando senha:
-    const hash = await (0, service_bcrypt_1.comparePass)(data.senha_usuario, senhaBD);
-    console.log(hash);
-    if (!hash) {
-        return "Senha incorreta!";
+    const hash = await (0, service_bcrypt_1.comparePass)(data.senha_usuario, senhaBD); // service bcrypt;
+    // Se o login for bem efetuado:
+    if (hash) {
+        return "Login efetuado!";
     }
-    return "login efetuado!";
+    return "Senha incorreta!";
 }
 //# sourceMappingURL=controller.login.js.map

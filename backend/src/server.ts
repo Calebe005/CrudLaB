@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config(); // Variáveis de ambiente;
 
@@ -14,6 +15,7 @@ import { errorHandler } from "./Errors/midle.errors";
 const app = express();
 const port = 8080; // Porta local
 
+app.use(cors());
 app.use(express.json()); // Configurando o uso de JSON
 
 // Midllewares de rotas:

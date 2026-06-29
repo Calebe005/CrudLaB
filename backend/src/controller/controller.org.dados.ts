@@ -7,7 +7,7 @@ export async function DUser(req: any) {
   class Usuario {
     id_usuario?: number;
     nome_usuario?: string;
-    sobre_nome_usuario?: string;
+    sobrenome_usuario?: string;
     email_usuario?: string;
     senha_usuario?: string;
     data_nascimento?: string;
