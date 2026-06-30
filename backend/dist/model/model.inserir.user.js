@@ -14,7 +14,7 @@ async function Insert_user(user) {
             user.senha_usuario ?? null,
             user.data_nascimento ?? null,
         ]);
-        return "Usuário criado com sucesso!";
+        return "Cadastro Efetuado!";
     }
     catch (err) {
         console.error(err);

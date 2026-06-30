@@ -1,4 +1,5 @@
 import ValidationErrors from "../Errors/errors.validadition"; // Classe de erros personalizada
+import dns from "dns";
 import { buscaBD } from "../model/model.buscar";
 import Insert_user from "../model/model.inserir.user";
 import { hashPass } from "../services/service.bcrypt";
@@ -37,6 +38,30 @@ export default async function FilterData(user: any, reqType: string) {
     }
     if (user.email_usuario.length > 30) {
       erros.push("Email Muito longo!");
+    }
+
+    // Verificando formato:
+    regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/
+    if(!regex.test(user.email_usuario)){
+      erros.push("Formato de e-mail inválido");
+    }
+    //Verificando cadastro MX:
+    const dominio = user.email_usuario.split("@")[1];
+    dns.resolveMx(dominio, (err, address)=>{
+      if(err || address.length === 0){
+        erros.push(`@${dominio} É um dominio inválido!`);
+      }
+    });
+
+    // Verificação mais proxima da TDL:]
+    const tldsMaisUsados = [
+      "COM", "NET", "ORG", "INFO",
+      "BR", "CN", "DE", "UK", "RU", "JP", "FR", "IT", "US",
+      "XYZ", "TOP", "SHOP", "ONLINE", "STORE", "VIP"
+    ];
+    const tld = dominio.split(".").pop();
+    if(!tldsMaisUsados.includes(tld)){
+        erros.push(`.${tld} É Inválido!"`);
     }
 
     // Verficar se o e-mail já foi cadastrado:

@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+body {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: linear-gradient(#4ebaf4 25%, #7ef4ffed);
+}
+
+/*
+Style do Header:
+*/
+#cabecalho {
+  background-color: white;
+  width: 100%;
+  flex: 0.5;
+
+  border-bottom: 5px solid #0c235ab5;
+
+  display: flex;
+
+  align-items: center;
+  justify-self: space;
+
+  padding: 1% 5%;
+}
+#logoSuperior {
+  width: 10%;
+  height: 100%;
+
+  margin-right: auto;
+  border-radius: 100%;
+}
+#areaMenuSup {
+  display: flex;
+  width: 50%;
+  height: 50%;
+}
+#listaMenuSup {
+  width: 100%;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+#areaLogin {
+  display: flex;
+  height: 100%;
+
+  width: 30%;
+  align-items: center;
+  justify-content: space-between;
+
+  border-left: 2px solid rgb(199, 229, 251);
+  padding-left: 20px;
+}
+#cadastre {
+  background-color: rgb(199, 229, 251);
+  padding: 20px;
+  border-radius: 5px;
+}
+.itemMenuSup,
+.itemMenuSup > a {
+  list-style: none;
+  text-decoration: none;
+  color: #1c3241;
+}
+
+.itemMenuSup > a:hover {
+  color: #c0d8ec;
+}
+
+#cadastre:hover {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.153);
+  cursor: pointer;
+}
+
+/*Style do Conteúdo principal*/
+#conteudoPrincipal {
+  flex: 2;
+  width: 100vw;
+
+  position: relative;
+}
+
+/*TODO opções pop-up*/
+/*Update*/
+#formCadastro{
+    display: none;  /*! colocar em flex pra ativar*/
+}
+
+
+/*Delete*/
+
+#popExcluir{
+    background-color: white;
+    position: relative;
+    width: 30vw;
+    height: 20vh;
+    padding: 2%;
+
+    margin: auto;
+    top: 25%;
+
+    display: none; /*! colocar em flex pra ativar*/
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 2px solid #578db1;
+    border-radius: 20px;
+}
+
+#btnExcluir{
+    padding: 4%;
+    width: 100%;
+
+    border: none;
+    border-radius: 20px;
+
+    background-color: rgb(244, 120, 120);
+}
+
+#btnExcluir:hover{
+    background-color: rgb(94, 3, 3);
+    color:white
+}
+
+/*Pesquisa*/
+#poPesquisa{
+    background-color: white;
+    width: 40vw;
+    height: 20vh;
+    position: relative;
+    padding: 2%;
+
+    margin:auto;
+    top: 25%;
+
+    border: 1px solid #1c3241;
+    border-radius: 20px;
+
+    display: none;  /*! colocar em flex pra ativar*/
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.CampoPesquisa, #btnPesquisa{
+    padding: 2%;
+    border-radius: 20px;
+    border: 2px solid #578db1;
+}
+.CampoPesquisa:hover{
+    border-color: #1c3241;
+}
+.secPesquisa{
+    display: flex;
+
+}
+
+#btnPesquisa{
+    background-color: white;
+    color: #1c3241;
+}
+#btnPesquisa:hover{
+    background-color: #1c3241;
+    color: white;
+}

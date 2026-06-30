@@ -1,3 +1,4 @@
+const path = require("path")
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
@@ -16,6 +17,9 @@ const app = express();
 const port = 8080; // Porta local
 
 app.use(cors());
+
+
+app.use(express.static(path.join(__dirname, "../../public")));
 app.use(express.json()); // Configurando o uso de JSON
 
 // Midllewares de rotas:

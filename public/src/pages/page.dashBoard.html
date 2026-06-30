@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../assets/img/logoSuperior.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style/style.cadastro.css">
+    <link rel="stylesheet" href="../style/style.dashBoard.css">
+    
+    <title>Dashboard</title>
+</head>
+<body>
+     <!-- Cabeçalho-->
+    <header id="cabecalho">
+      <img
+        src="../../assets/img/logoSuperior.png"
+        alt="Imagem de logo"
+        id="logoSuperior"
+      />
+      <!-- Menu superior-->
+      <nav id="areaMenuSup">
+        <ul id="listaMenuSup">
+          <li class="itemMenuSup"><a href="../../index.html">Home</a></li>
+          <li class="itemMenuSup"><a href="">Update</a></li>
+          <li class="itemMenuSup"><a href="">Delete</a></li>
+          <div id="areaLogin">
+            <li class="itemMenuSup" id="cadastre">
+              <a href="">Pesquisar</a>
+            </li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <main id="conteudoPrincipal">
+        <!-- update-->
+        <form action="#" method="get" id="formCadastro">
+        <div class="secCad">
+          <label for="nome">Nome</label>
+          <input type="text" id="nomeCad" class="campoCampoCad" name="nome" />
+        </div>
+        <div class="secCad">
+          <label for="sobrenome">Sobrenome</label>
+          <input
+            type="text"
+            id="sobrenomeCad"
+            class="campoCampoCad"
+            name="sobrenome"
+          />
+        </div>
+        <div class="secCad">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            id="emailCad"
+            class="campoCampoCad"
+            name="email"
+          />
+        </div>
+        <div class="secCad">
+          <label for="senha">Senha</label>
+          <input
+            type="password"
+            id="senhaCad"
+            class="campoCampoCad"
+            name="senha"
+          />
+        </div>
+        <div class="secCad">
+          <label for="data">Data nascimento</label>
+          <input
+            type="date"
+            id="dataNascimento"
+            class="campoCampoCad"
+            name="data"
+          />
+        </div>
+        <div class="secCad">
+          <label for="cfsenha">Confirme a Senha</label>
+          <input
+            type="password"
+            id="cnfSenhaCad"
+            class="campoCampoCad"
+            name="cfsenha"
+          />
+        </div>
+        <input type="button" value="Atualizar" id="btnCad" />
+      </form>
+
+        <!-- delete-->
+        <div id="popExcluir">
+            <p>Deseja realmente excluir sua conta?</p>
+            <button id="btnExcluir">Excluir</button>
+        </div>
+         
+        <!-- pesquisa-->
+
+        <section action="" id="poPesquisa">
+            <div class="secPesquisa">
+                <label for="typeReq">Buscar por</label>
+                <select name="typeReq" id="tipoBusca" class="CampoPesquisa">
+                    <option value="Nome">Nome</option>
+                    <option value="Nome">Sobrenome</option>
+                    <option value="Nome">Email</option>
+                    <option value="Nome">Data Nascimento</option>
+                </select>
+            </div>
+            <div class="secPesquisa"></div>
+                <label for="search">Pesquisa</label>
+                <input type="text" name="search" id="campoPesquisa" class="CampoPesquisa">
+            </div>
+            <button id="btnPesquisa">Pesquisar</button>
+        </section>
+    </main>
+</body>
+</html>

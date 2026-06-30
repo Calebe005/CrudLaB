@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = FilterData;
 const errors_validadition_1 = __importDefault(require("../Errors/errors.validadition")); // Classe de erros personalizada
+const dns_1 = __importDefault(require("dns"));
 const model_buscar_1 = require("../model/model.buscar");
 const model_inserir_user_1 = __importDefault(require("../model/model.inserir.user"));
 const service_bcrypt_1 = require("../services/service.bcrypt");
@@ -37,6 +38,28 @@ async function FilterData(user, reqType) {
         }
         if (user.email_usuario.length > 30) {
             erros.push("Email Muito longo!");
+        }
+        // Verificando formato:
+        regex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+        if (!regex.test(user.email_usuario)) {
+            erros.push("Formato de e-mail inválido");
+        }
+        //Verificando cadastro MX:
+        const dominio = user.email_usuario.split("@")[1];
+        dns_1.default.resolveMx(dominio, (err, address) => {
+            if (err || address.length === 0) {
+                erros.push(`@${dominio} É um dominio inválido!`);
+            }
+        });
+        // Verificação mais proxima da TDL:]
+        const tldsMaisUsados = [
+            "COM", "NET", "ORG", "INFO",
+            "BR", "CN", "DE", "UK", "RU", "JP", "FR", "IT", "US",
+            "XYZ", "TOP", "SHOP", "ONLINE", "STORE", "VIP"
+        ];
+        const tld = dominio.split(".").pop();
+        if (!tldsMaisUsados.includes(tld)) {
+            erros.push(`.${tld} É Inválido!"`);
         }
         // Verficar se o e-mail já foi cadastrado:
         if (Number(await (0, model_buscar_1.buscaBD)(user.email_usuario, "BuscaQntEmail")) >= 1) {

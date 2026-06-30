@@ -14,6 +14,6 @@ function errorHandler(err, req, res, next) {
         });
     }
     console.error(err.message);
-    return res.status(500).json("Erro interno no servidor!");
+    return res.status(500).json(`Erro interno no servidor!:${err}`);
 }
 //# sourceMappingURL=midle.errors.js.map

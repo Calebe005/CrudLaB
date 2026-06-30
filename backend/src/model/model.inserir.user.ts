@@ -13,7 +13,7 @@ export default async function Insert_user(user: any) {
         user.data_nascimento ?? null,
       ],
     );
-    return "Usuário criado com sucesso!";
+    return "Cadastro Efetuado!";
   } catch (err: any) {
     console.error(err);
     throw new Error("Erro ao inserir cadastro na base de dados:");

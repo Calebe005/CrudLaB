@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="src/style/style.index.css" />
+    <link rel="stylesheet" href="src/style/style.cadastro.css" />
+    <link rel="stylesheet" href="src/style/style.loading.css">
+    <link rel="stylesheet" href="src/style/style.error.css">
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
+    <title>CLW's DEV</title>
+  </head>
+  <body>
+    <!-- Cabeçalho-->
+    <header id="cabecalho">
+      <img
+        src="assets/img/logoSuperior.png"
+        alt="Imagem de logo"
+        id="logoSuperior"
+      />
+      <!-- Menu superior-->
+      <nav id="areaMenuSup">
+        <ul id="listaMenuSup">
+          <div id="areaLogin">
+            <li class="itemMenuSup" id="btnLogin"><p>Login</p></li>
+            <li class="itemMenuSup" id="cadastre">
+              <p>Cadastre-se</p>
+            </li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Conteudo principal-->
+    <main id="conteudoPrincipal">
+      <!--Formulário Login-->
+      <form action="#" method="get" id="formLogin">
+        <label for="email" class="labelLogin">E-mail</label>
+        <input type="email" id="emailInput" class="campoLogin" name="email" />
+        <label for="senha" class="labelLogin">Senha</label>
+        <input
+          type="password"
+          id="senhaInput"
+          class="campoLogin"
+          name="senha"
+        />
+        <p id="lCadastra">Não possui Login? Cadastre-se!</p>
+        <input type="submit" value="Login" id="btnInput" />
+      </form>
+
+      <!--Formulário de cadastro-->
+      <form action="#" method="post" id="formCadastro">
+        <div class="secCad">
+          <label for="nome">Nome</label>
+          <input type="text" id="nomeCad" class="campoCampoCad" name="nome" />
+        </div>
+        <div class="secCad">
+          <label for="sobrenome">Sobrenome</label>
+          <input
+            type="text"
+            id="sobrenomeCad"
+            class="campoCampoCad"
+            name="sobrenome"
+          />
+        </div>
+        <div class="secCad">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            id="emailCad"
+            class="campoCampoCad"
+            name="email"
+          />
+        </div>
+        <div class="secCad">
+          <label for="senha">Senha</label>
+          <input
+            type="password"
+            id="senhaCad"
+            class="campoCampoCad"
+            name="senha"
+          />
+        </div>
+        <div class="secCad">
+          <label for="data">Data nascimento</label>
+          <input
+            type="date"
+            id="dataNascimento"
+            class="campoCampoCad"
+            name="data"
+          />
+        </div>
+        <div class="secCad">
+          <label for="cfsenha">Confirme a Senha</label>
+          <input
+            type="password"
+            id="cnfSenhaCad"
+            class="campoCampoCad"
+            name="cfsenha"
+          />
+        </div>
+        <input type="submit" value="Cadastrar" id="btnCad" />
+      </form>
+
+      <img
+        src="assets/img/2301.i105.030.S.m005.c13.isometric job vacancy illustration.jpg"
+        alt="Imagem aleatória"
+        id="backImg"
+      />
+    </main>
+
+    <script type="module" src="src/script/script.js"></script>
+  </body>
+</html>

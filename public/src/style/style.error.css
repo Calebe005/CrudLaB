@@ -1,0 +1,50 @@
+.errorInput{
+    animation: error 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) ;
+}
+@keyframes error {
+    0%{border: 2px solid red;
+       transform: translateX(0);
+    }
+    25%{
+        border: 3px solid red;
+        transform: translateX(5px);
+    }
+
+    50%{
+        border: 2px solid red;
+        transform: translateX(-10px);
+    }
+    100%{
+        border: 2px solid red;
+        transform: translateX(0);
+    }
+    
+}
+
+.popError{
+    width: auto;
+    height: auto;
+    position: absolute;
+    z-index: 999;
+    padding: 20px;
+
+    background-color: rgb(251, 251, 251);
+    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 20px;
+    border: 2px solid rgb(245, 23, 23);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: subir 0.1s linear forwards;
+}
+
+@keyframes subir {
+    0%{opacity: 0;}
+    100%{opacity: 100%;}   
+}

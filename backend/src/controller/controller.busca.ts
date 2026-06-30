@@ -1,3 +1,4 @@
+import ValidationErrors from "../Errors/errors.validadition";
 import { buscaBD } from "../model/model.buscar";
 
 interface requisition {
@@ -10,7 +11,7 @@ export default async function pesquisaData(data: requisition) {
 
   // Verificando se houve retorno.
   if (String(result) == "") {
-    return `${data.reqType} não encontrado!`; // Usuário não encontrado!
+    throw new ValidationErrors([`${data.reqType} não encontrado!`]); // Usuário não encontrado!
   } else {
     return result; // Retorna os resultados
   }

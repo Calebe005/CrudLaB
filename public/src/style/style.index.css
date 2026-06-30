@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+body {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: linear-gradient(#4ebaf4 25%, #7ef4ffed);
+
+}
+
+/*
+Style do Header:
+*/
+#cabecalho {
+  background-color: white;
+  width: 100%;
+  flex: 0.5;
+
+  border-bottom: 5px solid #0c235ab5;
+
+  display: flex;
+
+  align-items: center;
+  justify-self: space;
+
+  padding: 1% 5%;
+}
+#logoSuperior {
+  width: 10%;
+  height: 100%;
+
+  margin-right: auto;
+  border-radius: 100%;
+}
+#areaMenuSup {
+  display: flex;
+  width: 50%;
+  height: 50%;
+}
+#listaMenuSup {
+  width: 100%;
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#areaLogin {
+  display: flex;
+  height: 100%;
+
+  width: 30%;
+  align-items: center;
+  justify-content: space-between;
+
+  border-left: 2px solid rgb(199, 229, 251);
+  padding-left: 20px;
+}
+#cadastre {
+  background-color: rgb(199, 229, 251);
+  padding: 20px;
+  border-radius: 5px;
+}
+.itemMenuSup,
+.itemMenuSup > a {
+  list-style: none;
+  text-decoration: none;
+  color: #1c3241;
+}
+
+.itemMenuSup > p:hover {
+  color: #c0d8ec;
+  cursor: pointer;
+}
+
+#cadastre:hover {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.153);
+  cursor: pointer;
+}
+
+/*Style do Conteúdo principal*/
+#conteudoPrincipal {
+  flex: 2;
+  width: 100vw;
+
+  position: relative;
+}
+#formLogin {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+
+  height: 60vh;
+  width: 30vw;
+  padding: 2% 2% 0px 2%;
+
+  top: 10%;
+  left: 10%;
+  position: absolute;
+  z-index: 2;
+
+  border-radius: 20px;
+  border: 1px solid #063556d7;
+
+  background-color: rgb(255, 255, 255);
+  /*display: none;*/
+}
+
+.campoLogin {
+  padding: 4%;
+  width: 100%;
+
+  border-radius: 10px;
+  border: 2px solid #c7e5fb;
+}
+
+#emailInput {
+  margin-bottom: 30px;
+}
+
+.campoLogin:hover {
+  border-color: #1c3241;
+}
+
+.labelLogin,
+#lCadastra {
+  align-self: self-start;
+  text-decoration: none;
+  color: black;
+}
+
+#lCadastra {
+  margin-bottom: 50px;
+}
+
+#lCadastra:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#btnInput {
+  padding: 5%;
+  width: 100%;
+
+  border: none;
+  border-radius: 10px;
+
+  background-color: #c7e5fb;
+}
+#btnInput:hover {
+  background-color: #57a9ed;
+}
+#backImg {
+  position: absolute;
+  right: 10%;
+  top: -4%;
+  max-width: 80vh;
+  z-index: -999;
+  border-radius: 10%;
+  animation: flutuar 3s ease-in-out infinite;
+}
+
+@keyframes flutuar{
+  0%{transform: translateY(0);}
+  50%{transform: translateY(-10px);}
+  100%{transform:translateY(0)}
+}
+
+.popUp{
+  animation: popUp 3s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+.popDown{
+   animation: popDown 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes popUp {
+  0%{transform: translateX(-150%)}
+  100%{transform: translateX(0)}
+}
+@keyframes popDown {
+  0%{transform: translateX(0)}
+  100%{transform: translateX(-150%)}
+}
+
+.popValidation{
+    width: auto;
+    height: auto;
+    position: absolute;
+    z-index: 999;
+    padding: 20px;
+
+    background-color: rgb(251, 251, 251);
+    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 20px;
+    border: 2px solid rgb(0, 255, 0);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: subir 0.1s linear forwards;
+}
