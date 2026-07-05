@@ -158,12 +158,12 @@ Style do Header:
     
 }
 
-.CampoPesquisa, #btnPesquisa{
+.campoPesquisa, #btnPesquisa{
     padding: 2%;
     border-radius: 20px;
     border: 2px solid #578db1;
 }
-.CampoPesquisa:hover{
+.campoPesquisa:hover{
     border-color: #1c3241;
 }
 .secPesquisa{
@@ -178,4 +178,41 @@ Style do Header:
 #btnPesquisa:hover{
     background-color: #1c3241;
     color: white;
+}
+
+.popResult{
+  width: 80%;
+  max-height: 200px;
+  padding: 20px;
+  bottom: 20px;
+  left: 10%;
+  background-color: white;
+  overflow: auto;
+  scrollbar-width: none;
+
+  position: absolute;
+
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.titulo{
+  color: black;
+}
+.secResult{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+.result{
+  color: rgb(166, 164, 164);
+  font-size: 12px;
+
 }

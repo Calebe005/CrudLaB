@@ -5,7 +5,14 @@ import { controllerError } from "../../errors/error.controller.js";
 const btnDelete = document.getElementById('btnExcluir');
 
 export async function controllerDelete(){
+     // Verificando se há um container de pesquisa ainda aberto
+    const container1 = document.getElementById("container");
+    if(container1){
+        document.body.removeChild(container1) // Removendo container anterior
+    }
+    
     popUpOptions("Delete");
+    console.log(localStorage.getItem("usuario"));
 
     btnDelete.addEventListener("click", async()=>{
         let response = await fetch("http://localhost:8080/delete", {
@@ -22,16 +29,14 @@ export async function controllerDelete(){
             controllerError(result.error[0]);
             return
         }else{
-            console.log('Usuario deletado!');         
+            console.log('Usuario deletado!');
+            popValidation("Usuario deletado!");
             try{ 
                 window.location.href = "/index.html";
             }catch(err){
                 console.log("Erro ao direcionar", err);
-            }
-            
-            
-        }
-        
+            }           
+        }      
     });
     
 }

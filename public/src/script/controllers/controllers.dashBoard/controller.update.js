@@ -6,6 +6,12 @@ import { Usuario } from "../controller.cadastro.js";
 export async function controllerUpdate(){
     popUpOptions('Update'); // Chamando animação do popUp.
 
+     // Verificando se há um container de pesquisa ainda aberto
+    const container1 = document.getElementById("container");
+    if(container1){
+        document.body.removeChild(container1) // Removendo container anterior
+    }
+
     const btnAtualizar = document.getElementById("btnCad");
     btnAtualizar.addEventListener("click", async ()=>{
             // Obtendo dados:

@@ -5,6 +5,12 @@ import { controllerError } from "../../errors/error.controller.js";
 const btnDelete = document.getElementById('btnExcluir');
 
 export async function controllerDelete(){
+     // Verificando se há um container de pesquisa ainda aberto
+    const container1 = document.getElementById("container");
+    if(container1){
+        document.body.removeChild(container1) // Removendo container anterior
+    }
+    
     popUpOptions("Delete");
     console.log(localStorage.getItem("usuario"));
 

@@ -12,7 +12,7 @@ routes.get("/", async (req, res, next) => {
   }
 });
 
-routes.get("/pesquisa", async (req, res, next) => {
+routes.post("/pesquisa", async (req, res, next) => {
   try {
     let result = await pesquisaData(req.body); // Controller de pesquisa;
 

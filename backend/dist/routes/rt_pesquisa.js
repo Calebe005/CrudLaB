@@ -15,7 +15,7 @@ routes.get("/", async (req, res, next) => {
         next(err); // Chama middleware de errors
     }
 });
-routes.get("/pesquisa", async (req, res, next) => {
+routes.post("/pesquisa", async (req, res, next) => {
     try {
         let result = await (0, controller_busca_1.default)(req.body); // Controller de pesquisa;
         res.status(200).json(result);
