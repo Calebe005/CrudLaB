@@ -23,6 +23,7 @@ async function updateBD(data, keyUpDate, upData, hash) {
     const setClausule = qntUpDate.join(",");
     // Atualizando dados;
     const [result] = await model_connect_1.default.execute(`UPDATE \`usuario\` SET ${setClausule} WHERE \`id_usuario\` = ${data}`, vUpdates);
+    console.log("erro:", result);
     return "Usuário atualizado!";
 }
 //# sourceMappingURL=model.update.js.map

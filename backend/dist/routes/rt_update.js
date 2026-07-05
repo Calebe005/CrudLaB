@@ -9,7 +9,7 @@ const routes = (0, express_1.Router)();
 routes.patch("/", async (req, res, next) => {
     try {
         const msg = await (0, controller_update_1.default)(req.body);
-        res.status(200).send(msg); // Controller de Update;
+        res.status(200).json(msg); // Controller de Update;
         console.log(msg);
     }
     catch (err) {

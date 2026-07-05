@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../assets/img/logoSuperior.png" type="image/x-icon">
+    <link rel="stylesheet" href="../style/style.index.css">
     <link rel="stylesheet" href="../style/style.cadastro.css">
     <link rel="stylesheet" href="../style/style.dashBoard.css">
+    <link rel="stylesheet" href="../style/style.error.css">
     
     <title>Dashboard</title>
 </head>
@@ -21,11 +23,11 @@
       <nav id="areaMenuSup">
         <ul id="listaMenuSup">
           <li class="itemMenuSup"><a href="../../index.html">Home</a></li>
-          <li class="itemMenuSup"><a href="">Update</a></li>
-          <li class="itemMenuSup"><a href="">Delete</a></li>
+          <li class="itemMenuSup"><p id="btnUpdate">Update</p></li>
+          <li class="itemMenuSup"><p id="btnDelete">Delete</p></li>
           <div id="areaLogin">
             <li class="itemMenuSup" id="cadastre">
-              <a href="">Pesquisar</a>
+              <p id="btnPesquisar">Pesquisar</p>
             </li>
           </div>
         </ul>
@@ -111,5 +113,7 @@
             <button id="btnPesquisa">Pesquisar</button>
         </section>
     </main>
+
+    <script type="module" src="../script/script.dashBoard.js"></script>
 </body>
 </html>

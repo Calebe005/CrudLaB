@@ -62,7 +62,7 @@ async function FilterData(user, reqType) {
             erros.push(`.${tld} É Inválido!"`);
         }
         // Verficar se o e-mail já foi cadastrado:
-        if (Number(await (0, model_buscar_1.buscaBD)(user.email_usuario, "BuscaQntEmail")) >= 1) {
+        if (Number(await (0, model_buscar_1.buscaBD)(user.email_usuario, "BuscaQntEmail")) >= 1 && reqType != "Update") {
             erros.push("E-mail já cadastrado!");
         }
     }

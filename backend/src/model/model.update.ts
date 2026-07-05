@@ -1,5 +1,6 @@
 import { ResultSetHeader } from "mysql2";
 import poll from "./model.connect";
+import { comparePass } from "../services/service.bcrypt";
 
 export default async function updateBD(
   data: [],
@@ -30,6 +31,7 @@ export default async function updateBD(
     `UPDATE \`usuario\` SET ${setClausule} WHERE \`id_usuario\` = ${data}`,
     vUpdates,
   );
+  console.log("erro:", result);
 
   return "Usuário atualizado!";
 }

@@ -65,7 +65,7 @@ export default async function FilterData(user: any, reqType: string) {
     }
 
     // Verficar se o e-mail já foi cadastrado:
-    if (Number(await buscaBD(user.email_usuario, "BuscaQntEmail")) >= 1) {
+    if (Number(await buscaBD(user.email_usuario, "BuscaQntEmail")) >= 1 && reqType != "Update") {
       erros.push("E-mail já cadastrado!");
     }
   }

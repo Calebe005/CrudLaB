@@ -15,7 +15,6 @@ async function loginUser(data) {
     });
     dataReq = dataReq;
     let dataBD = await JSON.parse(JSON.stringify(dataReq, null, 2));
-    console.log(dataBD);
     if (!dataBD) {
         throw new Error("E-mail ou Senha incorretos!");
     }

@@ -9,10 +9,11 @@ export function errorHandler(
   next: NextFunction,
 ) {
   if (err instanceof ValidationErrors) {
-    return res.status(401).json({
+    console.log(err.errors);
+    return res.status(400).json({
       message: err.message,
       error: err.errors,
-    });
+    });  
   }
 
   console.error(err.message);

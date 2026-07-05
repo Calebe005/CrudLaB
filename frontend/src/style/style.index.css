@@ -6,6 +6,9 @@
   box-sizing: border-box;
   font-family: "Roboto";
 }
+:root{
+  --position: -150%;
+}
 body {
   overflow: hidden;
   display: flex;
@@ -182,12 +185,13 @@ Style do Header:
 }
 
 @keyframes popUp {
-  0%{transform: translateX(-150%)}
+  0%{transform: translateX(var(--position))}
   100%{transform: translateX(0)}
 }
+
 @keyframes popDown {
   0%{transform: translateX(0)}
-  100%{transform: translateX(-150%)}
+  100%{transform: translateX(var(--position))} 
 }
 
 .popValidation{

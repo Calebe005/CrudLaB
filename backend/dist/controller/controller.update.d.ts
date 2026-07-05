@@ -1,6 +1,6 @@
 interface requisition {
     search: string;
-    update: {};
+    update: any;
 }
 export default function upDate(data: requisition): Promise<string>;
 export {};

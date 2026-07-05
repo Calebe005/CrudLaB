@@ -23,4 +23,5 @@ export function controllerError(msg) {
   }
 
   popUpError(msg);
+  return
 }

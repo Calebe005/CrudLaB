@@ -94,9 +94,8 @@ Style do Header:
 /*TODO opções pop-up*/
 /*Update*/
 #formCadastro{
-    display: none;  /*! colocar em flex pra ativar*/
+    display: none; /*! colocar em flex pra ativar*/
 }
-
 
 /*Delete*/
 
@@ -117,6 +116,8 @@ Style do Header:
 
     border: 2px solid #578db1;
     border-radius: 20px;
+
+    transform: translateX(-100%);
 }
 
 #btnExcluir{
@@ -127,11 +128,13 @@ Style do Header:
     border-radius: 20px;
 
     background-color: rgb(244, 120, 120);
+    
 }
 
 #btnExcluir:hover{
     background-color: rgb(94, 3, 3);
     color:white
+    
 }
 
 /*Pesquisa*/
@@ -151,6 +154,7 @@ Style do Header:
     display: none;  /*! colocar em flex pra ativar*/
     align-items: center;
     justify-content: space-between;
+    transform: translateX(-100%);
     
 }
 
