@@ -3,7 +3,7 @@ import { popUpLoginCad } from "../animations/script.popUpLogCad.js";
 import { popUpError } from "../errors/error.popUp.js";
 import { senhasDif } from "../errors/error.input.js";
 
-class Usuario {
+export class Usuario {
   constructor(
     nome_usuario,
     sobrenome_usuario,
@@ -32,12 +32,12 @@ export async function controllerCadastro() {
 
   // Organizando usuario:
   const usuario = new Usuario(
-    nome_usuario.value,
-    sobrenome_usuario.value,
-    email_usuario.value,
-    senha_usuario.value,
-    confirme_senha_usuario.value,
-    data_nascimento.value,
+    nome_usuario.value ?? null,
+    sobrenome_usuario.value ?? null,
+    email_usuario.value ?? null,
+    senha_usuario.value ?? null,
+    confirme_senha_usuario.value ?? null,
+    data_nascimento.value ?? null,
   );
 
   // Verificando se todos os campos estão preenchidos:

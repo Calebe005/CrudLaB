@@ -5,11 +5,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const controller_delete_1 = __importDefault(require("../controller/controller.delete"));
+const path = require("path");
 const routes = (0, express_1.Router)();
 routes.delete("/", async (req, res, next) => {
     try {
         const msg = await (0, controller_delete_1.default)(req.body.email_usuario); // Controller de Delete
-        res.status(200).send(msg);
+        res.status(200).json(msg);
         console.log(msg);
     }
     catch (err) {

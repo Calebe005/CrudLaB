@@ -6,7 +6,6 @@ const btnDelete = document.getElementById('btnExcluir');
 
 export async function controllerDelete(){
     popUpOptions("Delete");
-    console.log(localStorage.getItem("usuario"));
 
     btnDelete.addEventListener("click", async()=>{
         let response = await fetch("http://localhost:8080/delete", {
@@ -23,14 +22,16 @@ export async function controllerDelete(){
             controllerError(result.error[0]);
             return
         }else{
-            console.log('Usuario deletado!');
-            popValidation("Usuario deletado!");
+            console.log('Usuario deletado!');         
             try{ 
                 window.location.href = "/index.html";
             }catch(err){
                 console.log("Erro ao direcionar", err);
-            }           
-        }      
+            }
+            
+            
+        }
+        
     });
     
 }

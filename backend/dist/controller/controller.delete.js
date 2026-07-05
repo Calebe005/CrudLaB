@@ -4,15 +4,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = deleteData;
+const errors_validadition_1 = __importDefault(require("../Errors/errors.validadition"));
 const mode_delete_1 = __importDefault(require("../model/mode.delete"));
 async function deleteData(email) {
     const result = await (0, mode_delete_1.default)(email); // Chamando Model de delete:
     // Verificando resposta e retornando
     if (result) {
+        console.log("Usuário deletado!");
         return "Usuário deletado!";
     }
     else {
-        return "Usuario não encontrado!";
+        throw new errors_validadition_1.default(["Usuario não encontrado!"]);
     }
 }
 //# sourceMappingURL=controller.delete.js.map

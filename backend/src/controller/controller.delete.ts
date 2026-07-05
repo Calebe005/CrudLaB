@@ -1,3 +1,4 @@
+import ValidationErrors from "../Errors/errors.validadition";
 import daleteModel from "../model/mode.delete";
 
 export default async function deleteData(email: string) {
@@ -5,8 +6,9 @@ export default async function deleteData(email: string) {
 
   // Verificando resposta e retornando
   if (result) {
+    console.log("Usuário deletado!");
     return "Usuário deletado!";
   } else {
-    return "Usuario não encontrado!";
+    throw new ValidationErrors(["Usuario não encontrado!"]);
   }
 }

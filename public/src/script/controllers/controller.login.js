@@ -19,11 +19,11 @@ export async function controllerLogin(){
 
     response = await response.json(); // Resposta do servidor;
     
-
     if(response.error){
         console.log(response);
         throw new Error(response.error);
     }else{
+        localStorage.setItem("usuario",usuarioLogin.email_usuario);  // Armazena o login atual no localStorage;  
         popValidation(response);
     }
 
